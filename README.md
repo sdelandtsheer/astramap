@@ -14,7 +14,9 @@ Milestone 3, synthetic alert generator, is complete. The generator lives in `scr
 
 Milestone 4, data validator, is complete. The validator lives in `scripts/validate_demo_data.py`.
 
-Current focus: Milestone 5, synthetic cutout generator.
+Milestone 5, synthetic cutout generator, is complete. The cutout generator lives in `scripts/generate_demo_cutouts.py`.
+
+Current focus: Milestone 6, frontend scaffold.
 
 Planned v0.1 MVP:
 
@@ -82,4 +84,10 @@ Validate the generated dataset with:
 
 ```bash
 python scripts/validate_demo_data.py
+```
+
+Generate synthetic blink-card cutouts with:
+
+```bash
+python scripts/generate_demo_cutouts.py --n-featured 50 --seed 42
 ```
