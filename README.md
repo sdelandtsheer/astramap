@@ -40,7 +40,9 @@ Milestone 16, public caveats and methods, is complete. Methods are documented in
 
 Milestone 17, performance pass, is complete. Notes are documented in `docs/performance.md`.
 
-Current focus: Milestone 18, deployment.
+Milestone 18, deployment readiness, is complete. Deployment notes live in `docs/deployment.md`.
+
+Current focus: Milestone 19, Wix integration.
 
 Planned v0.1 MVP:
 
