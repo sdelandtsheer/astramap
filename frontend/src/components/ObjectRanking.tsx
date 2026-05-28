@@ -49,7 +49,7 @@ export default function ObjectRanking({ alerts, selectedObjectId, onSelectObject
           {rows.map((row, index) => (
             <button
               key={row.objectId}
-              className={`rounded-md border px-3 py-2 text-left text-xs ${
+              className={`min-h-24 rounded-md border px-3 py-2 text-left text-xs transition-colors ${
                 selectedObjectId === row.objectId
                   ? "border-cyan-300/70 bg-cyan-400/10"
                   : "border-slate-800 bg-slate-950/70 hover:border-slate-600"
@@ -58,7 +58,9 @@ export default function ObjectRanking({ alerts, selectedObjectId, onSelectObject
               type="button"
             >
               <div className="flex items-center justify-between gap-2">
-                <span className="font-medium text-slate-200">{index + 1}. {row.objectId}</span>
+                <span className="font-medium text-slate-200">
+                  {index + 1}. {row.objectId}
+                </span>
                 <span className="rounded bg-emerald-400/10 px-2 py-1 text-emerald-200">{row.priorityScore.toFixed(2)}</span>
               </div>
               <div className="mt-2 flex items-center justify-between gap-2 text-slate-500">

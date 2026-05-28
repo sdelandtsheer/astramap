@@ -26,6 +26,14 @@ interface HoverState {
 }
 
 const HIT_RADIUS_PX = 7;
+const legend = [
+  ["Variable", "#67e8f9"],
+  ["Asteroid", "#facc15"],
+  ["Supernova", "#fb7185"],
+  ["AGN", "#a78bfa"],
+  ["Artifact", "#94a3b8"],
+  ["Unknown", "#34d399"],
+] as const;
 
 export default function SkyMap({ alerts, colorMode, isLoading, loadError, selectedObjectId, onSelectObject, summary }: SkyMapProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -142,14 +150,24 @@ export default function SkyMap({ alerts, colorMode, isLoading, loadError, select
         onMouseMove={(event) => setHover(nearestAlert(event.clientX, event.clientY))}
       />
 
-      <div className="pointer-events-none absolute left-3 top-3 text-xs uppercase text-slate-500">RA / Dec Projection</div>
-      <div className="pointer-events-none absolute right-3 top-3 rounded bg-slate-950/80 px-2 py-1 text-xs text-slate-400">
+      <div className="pointer-events-none absolute left-3 top-3 rounded-md border border-slate-800 bg-slate-950/80 px-2 py-1 text-xs uppercase text-slate-500">
+        RA / Dec Projection
+      </div>
+      <div className="pointer-events-none absolute right-3 top-3 rounded-md border border-slate-800 bg-slate-950/80 px-2 py-1 text-xs text-slate-400">
         {isLoading && "Loading data"}
         {loadError && "Data load error"}
-        {!isLoading && !loadError && summary && `${summary.objectCount.toLocaleString()} objects`}
+        {!isLoading && !loadError && summary && `${alerts.length.toLocaleString()} alerts / ${summary.objectCount.toLocaleString()} objects`}
       </div>
-      <div className="pointer-events-none absolute bottom-3 left-3 text-xs text-slate-500">
+      <div className="pointer-events-none absolute bottom-3 left-3 rounded-md border border-slate-800 bg-slate-950/80 px-2 py-1 text-xs text-slate-500">
         {summary ? `MJD ${summary.mjdMin.toFixed(2)} - ${summary.mjdMax.toFixed(2)}` : "Alert map"}
+      </div>
+      <div className="pointer-events-none absolute bottom-3 right-3 hidden max-w-[520px] flex-wrap gap-2 rounded-md border border-slate-800 bg-slate-950/80 px-2 py-1 text-xs text-slate-400 xl:flex">
+        {legend.map(([label, color]) => (
+          <span key={label} className="flex items-center gap-1.5">
+            <span className="size-2 rounded-full" style={{ backgroundColor: color }} />
+            {label}
+          </span>
+        ))}
       </div>
 
       {loadError ? (
@@ -175,7 +193,11 @@ export default function SkyMap({ alerts, colorMode, isLoading, loadError, select
 }
 
 function drawBackground(context: CanvasRenderingContext2D, size: CanvasSize) {
-  context.fillStyle = "#070a10";
+  const gradient = context.createLinearGradient(0, 0, size.width, size.height);
+  gradient.addColorStop(0, "#070a10");
+  gradient.addColorStop(0.55, "#0a1020");
+  gradient.addColorStop(1, "#07110f");
+  context.fillStyle = gradient;
   context.fillRect(0, 0, size.width, size.height);
 
   context.strokeStyle = "rgba(148, 163, 184, 0.13)";

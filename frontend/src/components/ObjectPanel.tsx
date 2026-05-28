@@ -67,10 +67,10 @@ function LoadedObject({ selectedAlert, selectedObject }: { selectedAlert: AlertP
 
   return (
     <div className="min-h-0 space-y-4 overflow-y-auto pr-1">
-      <div>
+      <div className="rounded-md border border-slate-800 bg-slate-950/70 p-3">
         <div className="text-xs uppercase text-slate-500">Object ID</div>
-        <div className="mt-1 text-lg font-semibold text-white">{selectedObject.object_id}</div>
-        <div className="mt-1 text-sm text-slate-400">{classLabels[likelyClass]}</div>
+        <div className="mt-1 break-all text-lg font-semibold text-white">{selectedObject.object_id}</div>
+        <div className="mt-2 inline-flex rounded bg-cyan-400/10 px-2 py-1 text-xs text-cyan-100">{classLabels[likelyClass]}</div>
       </div>
 
       <div className="grid grid-cols-2 gap-3 text-sm">
@@ -145,7 +145,7 @@ function ProbabilityBar({ label, value }: { label: ClassLabel; value: number }) 
         <span className="text-slate-500">{value.toFixed(2)}</span>
       </div>
       <div className="h-2 overflow-hidden rounded bg-slate-900">
-        <div className="h-full rounded bg-cyan-300" style={{ width: `${Math.max(2, value * 100)}%` }} />
+        <div className="h-full rounded bg-cyan-300 transition-[width]" style={{ width: `${Math.max(2, value * 100)}%` }} />
       </div>
     </div>
   );

@@ -34,7 +34,9 @@ Milestone 13, time slider, is complete. MJD filtering is wired through `frontend
 
 Milestone 14, object ranking list, is complete. The filtered top-object list lives in `frontend/src/components/ObjectRanking.tsx`.
 
-Current focus: Milestone 15, visual polish pass.
+Milestone 15, visual polish pass, is complete.
+
+Current focus: Milestone 16, public caveats and methods.
 
 Planned v0.1 MVP:
 
