@@ -20,7 +20,9 @@ Milestone 6, frontend scaffold, is complete. The static shell lives under `front
 
 Milestone 7, data loading layer, is complete. Static data loading lives in `frontend/src/data/loadData.ts`.
 
-Current focus: Milestone 8, basic sky map.
+Milestone 8, basic sky map, is complete. The map renders alert points in `frontend/src/components/SkyMap.tsx`.
+
+Current focus: Milestone 9, object panel.
 
 Planned v0.1 MVP:
 

@@ -11,6 +11,7 @@ import type { AlertPoint } from "./types";
 
 export default function App() {
   const [alerts, setAlerts] = useState<AlertPoint[]>([]);
+  const [selectedObjectId, setSelectedObjectId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
@@ -41,6 +42,10 @@ export default function App() {
   }, []);
 
   const summary = useMemo(() => (alerts.length > 0 ? summarizeAlerts(alerts) : null), [alerts]);
+  const selectedAlert = useMemo(
+    () => alerts.find((alert) => alert.object_id === selectedObjectId) ?? null,
+    [alerts, selectedObjectId],
+  );
 
   return (
     <main className="min-h-screen bg-[#080b12] text-slate-100">
@@ -67,11 +72,18 @@ export default function App() {
           </aside>
 
           <section className="min-h-0 bg-[#070a10]">
-            <SkyMap isLoading={isLoading} loadError={loadError} summary={summary} />
+            <SkyMap
+              alerts={alerts}
+              isLoading={isLoading}
+              loadError={loadError}
+              onSelectObject={setSelectedObjectId}
+              selectedObjectId={selectedObjectId}
+              summary={summary}
+            />
           </section>
 
           <aside className="border-t border-slate-800 bg-[#0d1322] lg:border-l lg:border-t-0">
-            <ObjectPanel />
+            <ObjectPanel selectedAlert={selectedAlert} />
           </aside>
 
           <section className="border-t border-slate-800 bg-[#0b1020] lg:col-span-3">
