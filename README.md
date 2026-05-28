@@ -16,7 +16,9 @@ Milestone 4, data validator, is complete. The validator lives in `scripts/valida
 
 Milestone 5, synthetic cutout generator, is complete. The cutout generator lives in `scripts/generate_demo_cutouts.py`.
 
-Current focus: Milestone 6, frontend scaffold.
+Milestone 6, frontend scaffold, is complete. The static shell lives under `frontend/src/`.
+
+Current focus: Milestone 7, data loading layer.
 
 Planned v0.1 MVP:
 
