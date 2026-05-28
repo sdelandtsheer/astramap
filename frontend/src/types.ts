@@ -60,3 +60,17 @@ export interface AlertDatasetSummary {
   anomalyMax: number;
   priorityMax: number;
 }
+
+export type ColorMode = "class" | "anomaly_score" | "priority_score";
+
+export interface FilterState {
+  enabledClasses: Record<ClassLabel, boolean>;
+  colorMode: ColorMode;
+  minAnomalyScore: number;
+  minPriorityScore: number;
+  anomaliesOnly: boolean;
+  transients: boolean;
+  movingObjects: boolean;
+  artifacts: boolean;
+  unknowns: boolean;
+}

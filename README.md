@@ -28,7 +28,9 @@ Milestone 10, light curve component, is complete. The chart lives in `frontend/s
 
 Milestone 11, blink card, is complete. The blink viewer lives in `frontend/src/components/BlinkCard.tsx`.
 
-Current focus: Milestone 12, layer controls.
+Milestone 12, layer controls, is complete. Filtering is centralized in `frontend/src/utils/scoring.ts`.
+
+Current focus: Milestone 13, time slider.
 
 Planned v0.1 MVP:
 

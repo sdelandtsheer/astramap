@@ -7,10 +7,12 @@ import ObjectRanking from "./components/ObjectRanking";
 import SkyMap from "./components/SkyMap";
 import TimeSlider from "./components/TimeSlider";
 import { loadAlerts, loadDetailedObject, summarizeAlerts } from "./data/loadData";
-import type { AlertPoint, DetailedObject } from "./types";
+import type { AlertPoint, DetailedObject, FilterState } from "./types";
+import { createDefaultFilters, filterAlerts } from "./utils/scoring";
 
 export default function App() {
   const [alerts, setAlerts] = useState<AlertPoint[]>([]);
+  const [filters, setFilters] = useState<FilterState>(() => createDefaultFilters());
   const [selectedObjectId, setSelectedObjectId] = useState<string | null>(null);
   const [selectedObject, setSelectedObject] = useState<DetailedObject | null>(null);
   const [isObjectLoading, setIsObjectLoading] = useState(false);
@@ -80,6 +82,11 @@ export default function App() {
   }, [selectedObjectId]);
 
   const summary = useMemo(() => (alerts.length > 0 ? summarizeAlerts(alerts) : null), [alerts]);
+  const filteredAlerts = useMemo(() => filterAlerts(alerts, filters), [alerts, filters]);
+  const filteredSummary = useMemo(
+    () => (filteredAlerts.length > 0 ? summarizeAlerts(filteredAlerts) : null),
+    [filteredAlerts],
+  );
   const selectedAlert = useMemo(
     () => alerts.find((alert) => alert.object_id === selectedObjectId) ?? null,
     [alerts, selectedObjectId],
@@ -106,17 +113,18 @@ export default function App() {
 
         <section className="grid min-h-0 flex-1 grid-cols-1 grid-rows-[auto_minmax(360px,1fr)_auto_auto] lg:grid-cols-[280px_minmax(0,1fr)_360px] lg:grid-rows-[minmax(0,1fr)_104px]">
           <aside className="border-b border-slate-800 bg-[#0d1322] lg:border-b-0 lg:border-r">
-            <LayerControls summary={summary} />
+            <LayerControls filters={filters} onFiltersChange={setFilters} summary={summary} />
           </aside>
 
           <section className="min-h-0 bg-[#070a10]">
             <SkyMap
-              alerts={alerts}
+              alerts={filteredAlerts}
+              colorMode={filters.colorMode}
               isLoading={isLoading}
               loadError={loadError}
               onSelectObject={setSelectedObjectId}
               selectedObjectId={selectedObjectId}
-              summary={summary}
+              summary={filteredSummary ?? summary}
             />
           </section>
 
@@ -134,7 +142,7 @@ export default function App() {
           </section>
 
           <section className="border-t border-slate-800 bg-[#0d1322] lg:col-span-3">
-            <ObjectRanking alerts={alerts} />
+            <ObjectRanking alerts={filteredAlerts} />
           </section>
         </section>
       </div>

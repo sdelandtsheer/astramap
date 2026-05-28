@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import type { AlertDatasetSummary, AlertPoint } from "../types";
-import { classColor } from "../utils/colorScales";
+import type { AlertDatasetSummary, AlertPoint, ColorMode } from "../types";
+import { alertColor } from "../utils/colorScales";
 import { projectRaDec } from "../utils/projections";
 
 interface SkyMapProps {
   alerts: AlertPoint[];
+  colorMode: ColorMode;
   isLoading: boolean;
   loadError: string | null;
   selectedObjectId: string | null;
@@ -26,7 +27,7 @@ interface HoverState {
 
 const HIT_RADIUS_PX = 7;
 
-export default function SkyMap({ alerts, isLoading, loadError, selectedObjectId, onSelectObject, summary }: SkyMapProps) {
+export default function SkyMap({ alerts, colorMode, isLoading, loadError, selectedObjectId, onSelectObject, summary }: SkyMapProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const [size, setSize] = useState<CanvasSize>({ width: 1, height: 1 });
@@ -81,7 +82,7 @@ export default function SkyMap({ alerts, isLoading, loadError, selectedObjectId,
 
     for (const point of projectedAlerts) {
       context.beginPath();
-      context.fillStyle = classColor(point.alert.class_label);
+      context.fillStyle = alertColor(point.alert, colorMode);
       context.globalAlpha = selectedObjectId && point.alert.object_id !== selectedObjectId ? 0.42 : 0.82;
       context.arc(point.x, point.y, point.alert.anomaly_score > 0.7 ? 2.2 : 1.45, 0, Math.PI * 2);
       context.fill();
@@ -100,7 +101,7 @@ export default function SkyMap({ alerts, isLoading, loadError, selectedObjectId,
     }
 
     context.globalAlpha = 1;
-  }, [projectedAlerts, selectedObjectId, size]);
+  }, [colorMode, projectedAlerts, selectedObjectId, size]);
 
   function nearestAlert(clientX: number, clientY: number): HoverState | null {
     const bounds = canvasRef.current?.getBoundingClientRect();
