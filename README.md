@@ -10,7 +10,9 @@ Milestone 1, repository skeleton, is complete. The branch workflow lives in `doc
 
 Milestone 2, synthetic data schema, is complete. The schema contract lives in `docs/data_schema.md`.
 
-Current focus: Milestone 3, synthetic alert generator.
+Milestone 3, synthetic alert generator, is complete. The generator lives in `scripts/generate_demo_data.py`.
+
+Current focus: Milestone 4, data validator.
 
 Planned v0.1 MVP:
 
@@ -67,3 +69,9 @@ Explicitly excluded from v0.1:
 Python scripts will generate static demo data under `data/` and frontend-ready image assets under `frontend/public/cutouts/`.
 
 The React frontend will consume static files only. No backend or database is planned for v0.1.
+
+Generate the initial synthetic dataset with:
+
+```bash
+python scripts/generate_demo_data.py --n-alerts 20000 --n-objects 200 --seed 42
+```
