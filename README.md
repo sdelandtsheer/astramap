@@ -24,7 +24,9 @@ Milestone 8, basic sky map, is complete. The map renders alert points in `fronte
 
 Milestone 9, object panel, is complete. Selected-object rendering lives in `frontend/src/components/ObjectPanel.tsx`.
 
-Current focus: Milestone 10, light curve component.
+Milestone 10, light curve component, is complete. The chart lives in `frontend/src/components/LightCurve.tsx`.
+
+Current focus: Milestone 11, blink card.
 
 Planned v0.1 MVP:
 
