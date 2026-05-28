@@ -1,5 +1,5 @@
-import { Activity, MoonStar } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { Activity, Database, MoonStar, Target } from "lucide-react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 
 import LayerControls from "./components/LayerControls";
 import ObjectPanel from "./components/ObjectPanel";
@@ -95,7 +95,7 @@ export default function App() {
   return (
     <main className="min-h-screen bg-[#080b12] text-slate-100">
       <div className="flex min-h-screen flex-col">
-        <header className="flex h-16 shrink-0 items-center justify-between border-b border-slate-800/90 bg-[#0b1020] px-5">
+        <header className="flex min-h-16 shrink-0 flex-col gap-3 border-b border-slate-800/90 bg-[#0b1020] px-4 py-3 md:flex-row md:items-center md:justify-between md:px-5">
           <div className="flex items-center gap-3">
             <div className="flex size-9 items-center justify-center rounded-md border border-cyan-400/30 bg-cyan-400/10 text-cyan-200">
               <MoonStar size={19} aria-hidden="true" />
@@ -105,14 +105,15 @@ export default function App() {
               <p className="text-xs text-slate-400">A cosmic weather map of the changing sky</p>
             </div>
           </div>
-          <div className="hidden items-center gap-2 rounded-md border border-slate-800 bg-slate-950/60 px-3 py-2 text-xs text-slate-300 sm:flex">
-            <Activity size={15} className="text-emerald-300" aria-hidden="true" />
-            <span>{summary ? `${summary.alertCount.toLocaleString()} synthetic alerts` : "Synthetic demo mode"}</span>
+          <div className="grid grid-cols-3 gap-2 text-xs">
+            <HeaderMetric icon={<Database size={14} aria-hidden="true" />} label="Alerts" value={summary ? summary.alertCount.toLocaleString() : "--"} />
+            <HeaderMetric icon={<Target size={14} aria-hidden="true" />} label="Objects" value={summary ? summary.objectCount.toLocaleString() : "--"} />
+            <HeaderMetric icon={<Activity size={14} aria-hidden="true" />} label="Shown" value={filteredAlerts.length.toLocaleString()} />
           </div>
         </header>
 
-        <section className="grid min-h-0 flex-1 grid-cols-1 grid-rows-[auto_minmax(360px,1fr)_auto_auto] lg:grid-cols-[280px_minmax(0,1fr)_360px] lg:grid-rows-[minmax(0,1fr)_104px]">
-          <aside className="border-b border-slate-800 bg-[#0d1322] lg:border-b-0 lg:border-r">
+        <section className="grid min-h-0 flex-1 grid-cols-1 grid-rows-[auto_minmax(420px,1fr)_auto_auto] lg:grid-cols-[292px_minmax(0,1fr)_380px] lg:grid-rows-[minmax(0,1fr)_112px]">
+          <aside className="min-h-0 border-b border-slate-800 bg-[#0d1322] lg:border-b-0 lg:border-r">
             <LayerControls filters={filters} onFiltersChange={setFilters} summary={summary} />
           </aside>
 
@@ -128,7 +129,7 @@ export default function App() {
             />
           </section>
 
-          <aside className="border-t border-slate-800 bg-[#0d1322] lg:border-l lg:border-t-0">
+          <aside className="min-h-0 border-t border-slate-800 bg-[#0d1322] lg:border-l lg:border-t-0">
             <ObjectPanel
               isLoading={isObjectLoading}
               loadError={objectError}
@@ -147,5 +148,17 @@ export default function App() {
         </section>
       </div>
     </main>
+  );
+}
+
+function HeaderMetric({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
+  return (
+    <div className="flex min-w-20 items-center gap-2 rounded-md border border-slate-800 bg-slate-950/60 px-3 py-2 text-slate-300">
+      <span className="text-cyan-300">{icon}</span>
+      <span>
+        <span className="block text-[10px] uppercase text-slate-500">{label}</span>
+        <span className="font-medium text-slate-100">{value}</span>
+      </span>
+    </div>
   );
 }

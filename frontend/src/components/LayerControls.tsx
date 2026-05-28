@@ -38,13 +38,13 @@ export default function LayerControls({ summary, filters, onFiltersChange }: Lay
   }
 
   return (
-    <div className="flex h-full flex-col gap-5 p-4">
+    <div className="flex h-full max-h-[70vh] flex-col gap-5 overflow-y-auto p-4 lg:max-h-none">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-sm font-medium text-slate-100">
           <Layers size={16} className="text-cyan-300" aria-hidden="true" />
           <span>Layers</span>
         </div>
-        <span className="rounded bg-slate-900 px-2 py-1 text-[11px] text-slate-400">v0.1</span>
+        <span className="rounded border border-slate-800 bg-slate-950 px-2 py-1 text-[11px] text-slate-400">v0.1</span>
       </div>
 
       <div className="space-y-3">
@@ -70,7 +70,10 @@ export default function LayerControls({ summary, filters, onFiltersChange }: Lay
         </div>
         <div className="grid grid-cols-2 gap-2">
           {CLASS_LABELS.map((classLabel) => (
-            <label key={classLabel} className="flex items-center gap-2 rounded border border-slate-800 bg-slate-950/60 px-2 py-2 text-xs text-slate-300">
+            <label
+              key={classLabel}
+              className="flex min-h-9 items-center gap-2 rounded-md border border-slate-800 bg-slate-950/60 px-2 py-2 text-xs text-slate-300 transition-colors hover:border-slate-700"
+            >
               <input
                 checked={filters.enabledClasses[classLabel]}
                 className="accent-cyan-300"
@@ -117,7 +120,7 @@ export default function LayerControls({ summary, filters, onFiltersChange }: Lay
         </label>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2 pb-1">
         <div className="text-xs font-medium uppercase text-slate-500">Quick layers</div>
         <Toggle label="Anomalies only" onChange={(value) => update({ anomaliesOnly: value })} value={filters.anomaliesOnly} />
         <Toggle label="Transients" onChange={(value) => update({ transients: value })} value={filters.transients} />
@@ -131,7 +134,7 @@ export default function LayerControls({ summary, filters, onFiltersChange }: Lay
 
 function Toggle({ label, value, onChange }: { label: string; value: boolean; onChange: (value: boolean) => void }) {
   return (
-    <label className="flex items-center justify-between rounded border border-slate-800 bg-slate-950/60 px-2 py-2 text-xs text-slate-300">
+    <label className="flex min-h-9 items-center justify-between rounded-md border border-slate-800 bg-slate-950/60 px-2 py-2 text-xs text-slate-300 transition-colors hover:border-slate-700">
       <span>{label}</span>
       <input checked={value} className="accent-cyan-300" onChange={(event) => onChange(event.target.checked)} type="checkbox" />
     </label>
