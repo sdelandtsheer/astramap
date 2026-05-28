@@ -1,6 +1,7 @@
 import { CircleDashed, Loader2 } from "lucide-react";
 
 import { CLASS_LABELS, type AlertPoint, type ClassLabel, type DetailedObject } from "../types";
+import LightCurve from "./LightCurve";
 
 interface ObjectPanelProps {
   selectedAlert: AlertPoint | null;
@@ -113,6 +114,8 @@ function LoadedObject({ selectedAlert, selectedObject }: { selectedAlert: AlertP
         <Coordinate label="First seen" value={selectedObject.first_seen_mjd.toFixed(3)} />
         <Coordinate label="Last seen" value={selectedObject.last_seen_mjd.toFixed(3)} />
       </section>
+
+      <LightCurve points={selectedObject.light_curve} />
     </div>
   );
 }
