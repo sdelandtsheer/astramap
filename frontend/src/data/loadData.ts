@@ -2,6 +2,7 @@ import { CLASS_LABELS, type AlertDatasetSummary, type AlertPoint, type ClassLabe
 
 const ALERT_DATA_URLS = ["/data/demo_alerts.json", "/data/demo_alerts.json.gz"];
 const DETAIL_OBJECT_BASE_URL = "/data/demo_objects";
+const detailObjectCache = new Map<string, Promise<DetailedObject>>();
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -100,9 +101,17 @@ export async function loadAlerts(): Promise<AlertPoint[]> {
 }
 
 export async function loadDetailedObject(objectId: string): Promise<DetailedObject> {
-  const detail = await fetchJson<unknown>(`${DETAIL_OBJECT_BASE_URL}/${objectId}.json`);
-  assertDetailedObject(detail, objectId);
-  return detail;
+  const cached = detailObjectCache.get(objectId);
+  if (cached) {
+    return cached;
+  }
+
+  const request = fetchJson<unknown>(`${DETAIL_OBJECT_BASE_URL}/${objectId}.json`).then((detail) => {
+    assertDetailedObject(detail, objectId);
+    return detail;
+  });
+  detailObjectCache.set(objectId, request);
+  return request;
 }
 
 export function summarizeAlerts(alerts: AlertPoint[]): AlertDatasetSummary {

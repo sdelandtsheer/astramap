@@ -70,6 +70,8 @@ export default function BlinkCard({ cutouts }: BlinkCardProps) {
           <img
             alt={`${labels[frame]} synthetic cutout`}
             className="aspect-square w-full object-cover [image-rendering:auto]"
+            decoding="async"
+            loading="lazy"
             onError={() => setFailedFrames((current) => ({ ...current, [frame]: true }))}
             src={currentSource}
           />

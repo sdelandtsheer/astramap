@@ -1,8 +1,10 @@
 import { CircleDashed, Loader2 } from "lucide-react";
+import { Suspense, lazy } from "react";
 
 import { CLASS_LABELS, type AlertPoint, type ClassLabel, type DetailedObject } from "../types";
 import BlinkCard from "./BlinkCard";
-import LightCurve from "./LightCurve";
+
+const LightCurve = lazy(() => import("./LightCurve"));
 
 interface ObjectPanelProps {
   selectedAlert: AlertPoint | null;
@@ -117,7 +119,9 @@ function LoadedObject({ selectedAlert, selectedObject }: { selectedAlert: AlertP
       </section>
 
       <BlinkCard cutouts={selectedObject.cutouts} />
-      <LightCurve points={selectedObject.light_curve} />
+      <Suspense fallback={<div className="rounded-md border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-500">Loading light curve</div>}>
+        <LightCurve points={selectedObject.light_curve} />
+      </Suspense>
     </div>
   );
 }
