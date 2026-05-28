@@ -12,7 +12,9 @@ Milestone 2, synthetic data schema, is complete. The schema contract lives in `d
 
 Milestone 3, synthetic alert generator, is complete. The generator lives in `scripts/generate_demo_data.py`.
 
-Current focus: Milestone 4, data validator.
+Milestone 4, data validator, is complete. The validator lives in `scripts/validate_demo_data.py`.
+
+Current focus: Milestone 5, synthetic cutout generator.
 
 Planned v0.1 MVP:
 
@@ -74,4 +76,10 @@ Generate the initial synthetic dataset with:
 
 ```bash
 python scripts/generate_demo_data.py --n-alerts 20000 --n-objects 200 --seed 42
+```
+
+Validate the generated dataset with:
+
+```bash
+python scripts/validate_demo_data.py
 ```
