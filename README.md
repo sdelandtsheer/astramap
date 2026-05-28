@@ -8,7 +8,9 @@ Milestone 0, project definition, is complete. The frozen v0.1 scope lives in `do
 
 Milestone 1, repository skeleton, is complete. The branch workflow lives in `docs/branching.md`.
 
-Current focus: Milestone 2, synthetic data schema.
+Milestone 2, synthetic data schema, is complete. The schema contract lives in `docs/data_schema.md`.
+
+Current focus: Milestone 3, synthetic alert generator.
 
 Planned v0.1 MVP:
 
