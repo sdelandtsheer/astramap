@@ -142,7 +142,7 @@ export default function App() {
           </section>
 
           <section className="border-t border-slate-800 bg-[#0d1322] lg:col-span-3">
-            <ObjectRanking alerts={filteredAlerts} />
+            <ObjectRanking alerts={filteredAlerts} onSelectObject={setSelectedObjectId} selectedObjectId={selectedObjectId} />
           </section>
         </section>
       </div>
