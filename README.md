@@ -44,7 +44,9 @@ Milestone 18, deployment readiness, is complete. Deployment notes live in `docs/
 
 Milestone 19, Wix integration, is complete. Wix integration notes live in `docs/wix_integration.md`.
 
-Current focus: Milestone 20, first real-data bridge.
+Milestone 20, first real-data bridge, is complete. The adapter lives in `scripts/import_broker_like_data.py`.
+
+Current focus: scientific beta planning.
 
 Planned v0.1 MVP:
 
