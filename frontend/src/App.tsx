@@ -1,7 +1,8 @@
-import { Activity, Database, MoonStar, Target } from "lucide-react";
+import { Activity, Database, Info, MoonStar, Target } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 
 import LayerControls from "./components/LayerControls";
+import MethodsPanel from "./components/MethodsPanel";
 import ObjectPanel from "./components/ObjectPanel";
 import ObjectRanking from "./components/ObjectRanking";
 import SkyMap from "./components/SkyMap";
@@ -19,6 +20,7 @@ export default function App() {
   const [objectError, setObjectError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [isMethodsOpen, setIsMethodsOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -105,10 +107,17 @@ export default function App() {
               <p className="text-xs text-slate-400">A cosmic weather map of the changing sky</p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-2 text-xs">
+          <div className="grid grid-cols-[repeat(3,minmax(0,1fr))_auto] gap-2 text-xs">
             <HeaderMetric icon={<Database size={14} aria-hidden="true" />} label="Alerts" value={summary ? summary.alertCount.toLocaleString() : "--"} />
             <HeaderMetric icon={<Target size={14} aria-hidden="true" />} label="Objects" value={summary ? summary.objectCount.toLocaleString() : "--"} />
             <HeaderMetric icon={<Activity size={14} aria-hidden="true" />} label="Shown" value={filteredAlerts.length.toLocaleString()} />
+            <button
+              className="flex size-10 items-center justify-center rounded-md border border-slate-800 bg-slate-950/60 text-slate-300 hover:border-slate-600"
+              onClick={() => setIsMethodsOpen(true)}
+              type="button"
+            >
+              <Info size={15} aria-hidden="true" />
+            </button>
           </div>
         </header>
 
@@ -146,6 +155,7 @@ export default function App() {
             <ObjectRanking alerts={filteredAlerts} onSelectObject={setSelectedObjectId} selectedObjectId={selectedObjectId} />
           </section>
         </section>
+        <MethodsPanel isOpen={isMethodsOpen} onClose={() => setIsMethodsOpen(false)} />
       </div>
     </main>
   );
