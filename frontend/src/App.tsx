@@ -6,12 +6,15 @@ import ObjectPanel from "./components/ObjectPanel";
 import ObjectRanking from "./components/ObjectRanking";
 import SkyMap from "./components/SkyMap";
 import TimeSlider from "./components/TimeSlider";
-import { loadAlerts, summarizeAlerts } from "./data/loadData";
-import type { AlertPoint } from "./types";
+import { loadAlerts, loadDetailedObject, summarizeAlerts } from "./data/loadData";
+import type { AlertPoint, DetailedObject } from "./types";
 
 export default function App() {
   const [alerts, setAlerts] = useState<AlertPoint[]>([]);
   const [selectedObjectId, setSelectedObjectId] = useState<string | null>(null);
+  const [selectedObject, setSelectedObject] = useState<DetailedObject | null>(null);
+  const [isObjectLoading, setIsObjectLoading] = useState(false);
+  const [objectError, setObjectError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
@@ -40,6 +43,41 @@ export default function App() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    if (!selectedObjectId) {
+      setSelectedObject(null);
+      setObjectError(null);
+      setIsObjectLoading(false);
+      return undefined;
+    }
+
+    let cancelled = false;
+    setIsObjectLoading(true);
+
+    loadDetailedObject(selectedObjectId)
+      .then((detail) => {
+        if (!cancelled) {
+          setSelectedObject(detail);
+          setObjectError(null);
+        }
+      })
+      .catch((error: unknown) => {
+        if (!cancelled) {
+          setSelectedObject(null);
+          setObjectError(error instanceof Error ? error.message : String(error));
+        }
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsObjectLoading(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedObjectId]);
 
   const summary = useMemo(() => (alerts.length > 0 ? summarizeAlerts(alerts) : null), [alerts]);
   const selectedAlert = useMemo(
@@ -83,7 +121,12 @@ export default function App() {
           </section>
 
           <aside className="border-t border-slate-800 bg-[#0d1322] lg:border-l lg:border-t-0">
-            <ObjectPanel selectedAlert={selectedAlert} />
+            <ObjectPanel
+              isLoading={isObjectLoading}
+              loadError={objectError}
+              selectedAlert={selectedAlert}
+              selectedObject={selectedObject}
+            />
           </aside>
 
           <section className="border-t border-slate-800 bg-[#0b1020] lg:col-span-3">
