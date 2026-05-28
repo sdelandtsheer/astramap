@@ -1,0 +1,126 @@
+{
+  "object_id": "object_000055",
+  "ra": 42.585704,
+  "dec": -20.219176,
+  "first_seen_mjd": 60411.686372,
+  "last_seen_mjd": 60420.13084,
+  "class_probabilities": {
+    "variable_star": 0.2609,
+    "asteroid": 0.0227,
+    "supernova_candidate": 0.174,
+    "agn": 0.0242,
+    "artifact": 0.1085,
+    "unknown_anomaly": 0.4097
+  },
+  "anomaly_score": 0.663,
+  "priority_score": 0.4524,
+  "short_explanation": "Unusual demo feature mix with low class certainty, flagged for review.",
+  "flags": [
+    "fast_brightening",
+    "low_classification_confidence",
+    "rare_context",
+    "unusual_demo_feature_mix"
+  ],
+  "light_curve": [
+    {
+      "mjd": 60411.686372,
+      "mag": 22.2086,
+      "mag_err": 0.1044
+    },
+    {
+      "mjd": 60412.155509,
+      "mag": 22.7872,
+      "mag_err": 0.1397
+    },
+    {
+      "mjd": 60412.624646,
+      "mag": 22.8512,
+      "mag_err": 0.1923
+    },
+    {
+      "mjd": 60413.093783,
+      "mag": 22.4141,
+      "mag_err": 0.1662
+    },
+    {
+      "mjd": 60413.56292,
+      "mag": 21.7744,
+      "mag_err": 0.2046
+    },
+    {
+      "mjd": 60414.032058,
+      "mag": 21.7292,
+      "mag_err": 0.0871
+    },
+    {
+      "mjd": 60414.501195,
+      "mag": 21.8177,
+      "mag_err": 0.1055
+    },
+    {
+      "mjd": 60414.970332,
+      "mag": 22.1694,
+      "mag_err": 0.1527
+    },
+    {
+      "mjd": 60415.439469,
+      "mag": 22.965,
+      "mag_err": 0.203
+    },
+    {
+      "mjd": 60415.908606,
+      "mag": 22.7061,
+      "mag_err": 0.0411
+    },
+    {
+      "mjd": 60416.377743,
+      "mag": 22.3753,
+      "mag_err": 0.2145
+    },
+    {
+      "mjd": 60416.84688,
+      "mag": 22.0746,
+      "mag_err": 0.167
+    },
+    {
+      "mjd": 60417.316017,
+      "mag": 21.7216,
+      "mag_err": 0.1697
+    },
+    {
+      "mjd": 60417.785154,
+      "mag": 21.7486,
+      "mag_err": 0.1065
+    },
+    {
+      "mjd": 60418.254292,
+      "mag": 22.1454,
+      "mag_err": 0.1047
+    },
+    {
+      "mjd": 60418.723429,
+      "mag": 22.7137,
+      "mag_err": 0.0711
+    },
+    {
+      "mjd": 60419.192566,
+      "mag": 22.9277,
+      "mag_err": 0.1886
+    },
+    {
+      "mjd": 60419.661703,
+      "mag": 22.631,
+      "mag_err": 0.074
+    },
+    {
+      "mjd": 60420.13084,
+      "mag": 22.3368,
+      "mag_err": 0.0728
+    }
+  ],
+  "cutouts": {
+    "reference": "/cutouts/object_000055_ref.webp",
+    "new": "/cutouts/object_000055_new.webp",
+    "difference": "/cutouts/object_000055_diff.webp"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "object_id": "object_000074",
+  "ra": 149.830968,
+  "dec": -7.41405,
+  "first_seen_mjd": 60406.159372,
+  "last_seen_mjd": 60406.324293,
+  "class_probabilities": {
+    "variable_star": 0.0026,
+    "asteroid": 0.0064,
+    "supernova_candidate": 0.1233,
+    "agn": 0.0561,
+    "artifact": 0.67,
+    "unknown_anomaly": 0.1416
+  },
+  "anomaly_score": 0.5383,
+  "priority_score": 0.0836,
+  "short_explanation": "High anomaly score but likely artifact-like morphology.",
+  "flags": [
+    "artifact_like_morphology"
+  ],
+  "light_curve": [
+    {
+      "mjd": 60406.159372,
+      "mag": 21.5839,
+      "mag_err": 0.1864
+    },
+    {
+      "mjd": 60406.241833,
+      "mag": 21.019,
+      "mag_err": 0.1548
+    },
+    {
+      "mjd": 60406.324293,
+      "mag": 20.5946,
+      "mag_err": 0.1387
+    }
+  ]
+}

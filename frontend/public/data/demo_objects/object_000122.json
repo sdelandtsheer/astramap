@@ -1,0 +1,156 @@
+{
+  "object_id": "object_000122",
+  "ra": 328.530515,
+  "dec": 15.571658,
+  "first_seen_mjd": 60405.657528,
+  "last_seen_mjd": 60426.731006,
+  "class_probabilities": {
+    "variable_star": 0.2508,
+    "asteroid": 0.2003,
+    "supernova_candidate": 0.1902,
+    "agn": 0.0469,
+    "artifact": 0.1291,
+    "unknown_anomaly": 0.1827
+  },
+  "anomaly_score": 0.7855,
+  "priority_score": 0.4191,
+  "short_explanation": "Unusual demo feature mix with low class certainty, flagged for review.",
+  "flags": [
+    "fast_brightening",
+    "low_classification_confidence",
+    "rare_context",
+    "unusual_demo_feature_mix"
+  ],
+  "light_curve": [
+    {
+      "mjd": 60405.657528,
+      "mag": 22.6557,
+      "mag_err": 0.1925
+    },
+    {
+      "mjd": 60406.500467,
+      "mag": 23.0969,
+      "mag_err": 0.0656
+    },
+    {
+      "mjd": 60407.343406,
+      "mag": 22.708,
+      "mag_err": 0.1747
+    },
+    {
+      "mjd": 60408.186345,
+      "mag": 22.2584,
+      "mag_err": 0.1478
+    },
+    {
+      "mjd": 60409.029284,
+      "mag": 22.9236,
+      "mag_err": 0.1876
+    },
+    {
+      "mjd": 60409.872224,
+      "mag": 23.4315,
+      "mag_err": 0.0878
+    },
+    {
+      "mjd": 60410.715163,
+      "mag": 22.8276,
+      "mag_err": 0.1303
+    },
+    {
+      "mjd": 60411.558102,
+      "mag": 22.1366,
+      "mag_err": 0.1794
+    },
+    {
+      "mjd": 60412.401041,
+      "mag": 23.0708,
+      "mag_err": 0.1481
+    },
+    {
+      "mjd": 60413.24398,
+      "mag": 22.8627,
+      "mag_err": 0.1006
+    },
+    {
+      "mjd": 60414.086919,
+      "mag": 22.4488,
+      "mag_err": 0.1574
+    },
+    {
+      "mjd": 60414.929858,
+      "mag": 22.4355,
+      "mag_err": 0.0945
+    },
+    {
+      "mjd": 60415.772797,
+      "mag": 23.1485,
+      "mag_err": 0.1798
+    },
+    {
+      "mjd": 60416.615737,
+      "mag": 23.3301,
+      "mag_err": 0.0813
+    },
+    {
+      "mjd": 60417.458676,
+      "mag": 22.2221,
+      "mag_err": 0.124
+    },
+    {
+      "mjd": 60418.301615,
+      "mag": 22.0417,
+      "mag_err": 0.1448
+    },
+    {
+      "mjd": 60419.144554,
+      "mag": 23.1596,
+      "mag_err": 0.0874
+    },
+    {
+      "mjd": 60419.987493,
+      "mag": 23.4101,
+      "mag_err": 0.1167
+    },
+    {
+      "mjd": 60420.830432,
+      "mag": 22.5051,
+      "mag_err": 0.1584
+    },
+    {
+      "mjd": 60421.673371,
+      "mag": 21.9733,
+      "mag_err": 0.2142
+    },
+    {
+      "mjd": 60422.51631,
+      "mag": 23.3114,
+      "mag_err": 0.0843
+    },
+    {
+      "mjd": 60423.35925,
+      "mag": 23.0734,
+      "mag_err": 0.2088
+    },
+    {
+      "mjd": 60424.202189,
+      "mag": 22.469,
+      "mag_err": 0.0546
+    },
+    {
+      "mjd": 60425.045128,
+      "mag": 22.4157,
+      "mag_err": 0.0408
+    },
+    {
+      "mjd": 60425.888067,
+      "mag": 23.5095,
+      "mag_err": 0.0533
+    },
+    {
+      "mjd": 60426.731006,
+      "mag": 22.9175,
+      "mag_err": 0.2055
+    }
+  ]
+}

@@ -18,7 +18,9 @@ Milestone 5, synthetic cutout generator, is complete. The cutout generator lives
 
 Milestone 6, frontend scaffold, is complete. The static shell lives under `frontend/src/`.
 
-Current focus: Milestone 7, data loading layer.
+Milestone 7, data loading layer, is complete. Static data loading lives in `frontend/src/data/loadData.ts`.
+
+Current focus: Milestone 8, basic sky map.
 
 Planned v0.1 MVP:
 

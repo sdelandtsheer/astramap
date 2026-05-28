@@ -1,0 +1,102 @@
+{
+  "object_id": "object_000086",
+  "ra": 97.005524,
+  "dec": -9.609299,
+  "first_seen_mjd": 60402.49327,
+  "last_seen_mjd": 60421.277311,
+  "class_probabilities": {
+    "variable_star": 0.1214,
+    "asteroid": 0.1232,
+    "supernova_candidate": 0.0722,
+    "agn": 0.3545,
+    "artifact": 0.1613,
+    "unknown_anomaly": 0.1674
+  },
+  "anomaly_score": 0.7278,
+  "priority_score": 0.4152,
+  "short_explanation": "Unusual demo feature mix with low class certainty, flagged for review.",
+  "flags": [
+    "fast_brightening",
+    "low_classification_confidence",
+    "rare_context",
+    "isolated_detection",
+    "unusual_demo_feature_mix"
+  ],
+  "light_curve": [
+    {
+      "mjd": 60402.49327,
+      "mag": 22.4842,
+      "mag_err": 0.0728
+    },
+    {
+      "mjd": 60403.834987,
+      "mag": 22.7464,
+      "mag_err": 0.0863
+    },
+    {
+      "mjd": 60405.176704,
+      "mag": 21.7681,
+      "mag_err": 0.0416
+    },
+    {
+      "mjd": 60406.518422,
+      "mag": 22.9885,
+      "mag_err": 0.0558
+    },
+    {
+      "mjd": 60407.860139,
+      "mag": 22.025,
+      "mag_err": 0.1524
+    },
+    {
+      "mjd": 60409.201856,
+      "mag": 22.3565,
+      "mag_err": 0.1555
+    },
+    {
+      "mjd": 60410.543573,
+      "mag": 22.6874,
+      "mag_err": 0.0957
+    },
+    {
+      "mjd": 60411.88529,
+      "mag": 21.9147,
+      "mag_err": 0.0713
+    },
+    {
+      "mjd": 60413.227008,
+      "mag": 22.9598,
+      "mag_err": 0.1094
+    },
+    {
+      "mjd": 60414.568725,
+      "mag": 22.027,
+      "mag_err": 0.2102
+    },
+    {
+      "mjd": 60415.910442,
+      "mag": 22.7525,
+      "mag_err": 0.1656
+    },
+    {
+      "mjd": 60417.252159,
+      "mag": 22.5967,
+      "mag_err": 0.2071
+    },
+    {
+      "mjd": 60418.593877,
+      "mag": 21.6947,
+      "mag_err": 0.1316
+    },
+    {
+      "mjd": 60419.935594,
+      "mag": 23.022,
+      "mag_err": 0.207
+    },
+    {
+      "mjd": 60421.277311,
+      "mag": 21.8019,
+      "mag_err": 0.1493
+    }
+  ]
+}
