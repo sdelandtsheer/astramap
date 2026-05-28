@@ -11,6 +11,8 @@ export function createDefaultFilters(): FilterState {
     movingObjects: false,
     artifacts: false,
     unknowns: false,
+    timeCurrentMjd: null,
+    timeWindowDays: 3,
   };
 }
 
@@ -26,6 +28,12 @@ export function filterAlerts(alerts: AlertPoint[], filters: FilterState): AlertP
     }
     if (filters.anomaliesOnly && alert.anomaly_score < 0.7) {
       return false;
+    }
+    if (filters.timeCurrentMjd !== null) {
+      const startMjd = filters.timeCurrentMjd - filters.timeWindowDays;
+      if (alert.mjd < startMjd || alert.mjd > filters.timeCurrentMjd) {
+        return false;
+      }
     }
     if (!quickLayersActive) {
       return true;

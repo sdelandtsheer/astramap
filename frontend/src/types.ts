@@ -73,4 +73,6 @@ export interface FilterState {
   movingObjects: boolean;
   artifacts: boolean;
   unknowns: boolean;
+  timeCurrentMjd: number | null;
+  timeWindowDays: number;
 }

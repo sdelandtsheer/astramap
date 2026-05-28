@@ -30,7 +30,9 @@ Milestone 11, blink card, is complete. The blink viewer lives in `frontend/src/c
 
 Milestone 12, layer controls, is complete. Filtering is centralized in `frontend/src/utils/scoring.ts`.
 
-Current focus: Milestone 13, time slider.
+Milestone 13, time slider, is complete. MJD filtering is wired through `frontend/src/components/TimeSlider.tsx`.
+
+Current focus: Milestone 14, object ranking list.
 
 Planned v0.1 MVP:
 

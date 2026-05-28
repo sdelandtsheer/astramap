@@ -138,7 +138,7 @@ export default function App() {
           </aside>
 
           <section className="border-t border-slate-800 bg-[#0b1020] lg:col-span-3">
-            <TimeSlider summary={summary} />
+            <TimeSlider filters={filters} onFiltersChange={setFilters} summary={summary} />
           </section>
 
           <section className="border-t border-slate-800 bg-[#0d1322] lg:col-span-3">
