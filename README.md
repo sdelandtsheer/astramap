@@ -6,7 +6,9 @@ Rubin Night Watch is a synthetic-data demonstration of a cosmic weather map for 
 
 Milestone 0, project definition, is complete. The frozen v0.1 scope lives in `docs/mvp_scope.md`.
 
-Current focus: Milestone 1, repository skeleton.
+Milestone 1, repository skeleton, is complete. The branch workflow lives in `docs/branching.md`.
+
+Current focus: Milestone 2, synthetic data schema.
 
 Planned v0.1 MVP:
 
