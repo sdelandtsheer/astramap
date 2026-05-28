@@ -36,7 +36,9 @@ Milestone 14, object ranking list, is complete. The filtered top-object list liv
 
 Milestone 15, visual polish pass, is complete.
 
-Current focus: Milestone 16, public caveats and methods.
+Milestone 16, public caveats and methods, is complete. Methods are documented in `docs/methods.md`.
+
+Current focus: Milestone 17, performance pass.
 
 Planned v0.1 MVP:
 
