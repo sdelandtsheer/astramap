@@ -22,7 +22,9 @@ Milestone 7, data loading layer, is complete. Static data loading lives in `fron
 
 Milestone 8, basic sky map, is complete. The map renders alert points in `frontend/src/components/SkyMap.tsx`.
 
-Current focus: Milestone 9, object panel.
+Milestone 9, object panel, is complete. Selected-object rendering lives in `frontend/src/components/ObjectPanel.tsx`.
+
+Current focus: Milestone 10, light curve component.
 
 Planned v0.1 MVP:
 
