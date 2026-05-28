@@ -1,0 +1,56 @@
+{
+  "object_id": "object_000095",
+  "ra": 334.743241,
+  "dec": -54.472109,
+  "first_seen_mjd": 60414.454805,
+  "last_seen_mjd": 60416.221201,
+  "class_probabilities": {
+    "variable_star": 0.0317,
+    "asteroid": 0.8648,
+    "supernova_candidate": 0.0135,
+    "agn": 0.0077,
+    "artifact": 0.0599,
+    "unknown_anomaly": 0.0224
+  },
+  "anomaly_score": 0.2985,
+  "priority_score": 0.2922,
+  "short_explanation": "Moving-object-like behavior across multiple synthetic detections.",
+  "flags": [],
+  "light_curve": [
+    {
+      "mjd": 60414.454805,
+      "mag": 20.7828,
+      "mag_err": 0.1977
+    },
+    {
+      "mjd": 60414.749204,
+      "mag": 20.9383,
+      "mag_err": 0.1946
+    },
+    {
+      "mjd": 60415.043604,
+      "mag": 21.019,
+      "mag_err": 0.2181
+    },
+    {
+      "mjd": 60415.338003,
+      "mag": 21.0132,
+      "mag_err": 0.0883
+    },
+    {
+      "mjd": 60415.632402,
+      "mag": 20.9232,
+      "mag_err": 0.1676
+    },
+    {
+      "mjd": 60415.926802,
+      "mag": 20.8482,
+      "mag_err": 0.1562
+    },
+    {
+      "mjd": 60416.221201,
+      "mag": 20.7029,
+      "mag_err": 0.199
+    }
+  ]
+}

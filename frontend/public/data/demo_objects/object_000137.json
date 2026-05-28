@@ -1,0 +1,102 @@
+{
+  "object_id": "object_000137",
+  "ra": 44.653541,
+  "dec": -27.058529,
+  "first_seen_mjd": 60407.306911,
+  "last_seen_mjd": 60435.561628,
+  "class_probabilities": {
+    "variable_star": 0.3649,
+    "asteroid": 0.0563,
+    "supernova_candidate": 0.3508,
+    "agn": 0.0664,
+    "artifact": 0.1204,
+    "unknown_anomaly": 0.0412
+  },
+  "anomaly_score": 0.7463,
+  "priority_score": 0.5635,
+  "short_explanation": "Unusual demo feature mix with low class certainty, flagged for review.",
+  "flags": [
+    "fast_brightening",
+    "low_classification_confidence",
+    "rare_context",
+    "isolated_detection",
+    "unusual_demo_feature_mix"
+  ],
+  "light_curve": [
+    {
+      "mjd": 60407.306911,
+      "mag": 19.8037,
+      "mag_err": 0.1968
+    },
+    {
+      "mjd": 60409.480351,
+      "mag": 19.7146,
+      "mag_err": 0.0759
+    },
+    {
+      "mjd": 60411.653791,
+      "mag": 20.5051,
+      "mag_err": 0.1505
+    },
+    {
+      "mjd": 60413.82723,
+      "mag": 19.7623,
+      "mag_err": 0.1549
+    },
+    {
+      "mjd": 60416.00067,
+      "mag": 19.8243,
+      "mag_err": 0.1778
+    },
+    {
+      "mjd": 60418.17411,
+      "mag": 20.5983,
+      "mag_err": 0.0573
+    },
+    {
+      "mjd": 60420.34755,
+      "mag": 19.8773,
+      "mag_err": 0.1149
+    },
+    {
+      "mjd": 60422.520989,
+      "mag": 19.7158,
+      "mag_err": 0.1333
+    },
+    {
+      "mjd": 60424.694429,
+      "mag": 20.4106,
+      "mag_err": 0.0966
+    },
+    {
+      "mjd": 60426.867869,
+      "mag": 20.1026,
+      "mag_err": 0.2119
+    },
+    {
+      "mjd": 60429.041309,
+      "mag": 19.8802,
+      "mag_err": 0.1943
+    },
+    {
+      "mjd": 60431.214748,
+      "mag": 20.7795,
+      "mag_err": 0.1359
+    },
+    {
+      "mjd": 60433.388188,
+      "mag": 19.7497,
+      "mag_err": 0.0633
+    },
+    {
+      "mjd": 60435.561628,
+      "mag": 19.7156,
+      "mag_err": 0.1967
+    }
+  ],
+  "cutouts": {
+    "reference": "/cutouts/object_000137_ref.webp",
+    "new": "/cutouts/object_000137_new.webp",
+    "difference": "/cutouts/object_000137_diff.webp"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "object_id": "object_000075",
+  "ra": 195.547819,
+  "dec": 8.746363,
+  "first_seen_mjd": 60415.896816,
+  "last_seen_mjd": 60429.688739,
+  "class_probabilities": {
+    "variable_star": 0.0597,
+    "asteroid": 0.145,
+    "supernova_candidate": 0.4184,
+    "agn": 0.0256,
+    "artifact": 0.3036,
+    "unknown_anomaly": 0.0477
+  },
+  "anomaly_score": 0.5938,
+  "priority_score": 0.4598,
+  "short_explanation": "Fast brightening, weak class certainty, possible host-galaxy context.",
+  "flags": [
+    "fast_brightening",
+    "low_classification_confidence",
+    "possible_host_galaxy"
+  ],
+  "light_curve": [
+    {
+      "mjd": 60415.896816,
+      "mag": 23.2402,
+      "mag_err": 0.1402
+    },
+    {
+      "mjd": 60416.407628,
+      "mag": 23.2529,
+      "mag_err": 0.1678
+    },
+    {
+      "mjd": 60416.91844,
+      "mag": 23.0217,
+      "mag_err": 0.1371
+    },
+    {
+      "mjd": 60417.429252,
+      "mag": 23.0748,
+      "mag_err": 0.0329
+    },
+    {
+      "mjd": 60417.940064,
+      "mag": 22.8672,
+      "mag_err": 0.1745
+    },
+    {
+      "mjd": 60418.450876,
+      "mag": 22.738,
+      "mag_err": 0.2196
+    },
+    {
+      "mjd": 60418.961688,
+      "mag": 22.5499,
+      "mag_err": 0.1311
+    },
+    {
+      "mjd": 60419.4725,
+      "mag": 22.5578,
+      "mag_err": 0.1183
+    },
+    {
+      "mjd": 60419.983312,
+      "mag": 22.4351,
+      "mag_err": 0.0602
+    },
+    {
+      "mjd": 60420.494124,
+      "mag": 22.3451,
+      "mag_err": 0.059
+    },
+    {
+      "mjd": 60421.004936,
+      "mag": 22.1583,
+      "mag_err": 0.1558
+    },
+    {
+      "mjd": 60421.515748,
+      "mag": 22.0629,
+      "mag_err": 0.128
+    },
+    {
+      "mjd": 60422.02656,
+      "mag": 21.9844,
+      "mag_err": 0.1508
+    },
+    {
+      "mjd": 60422.537372,
+      "mag": 21.8262,
+      "mag_err": 0.0487
+    },
+    {
+      "mjd": 60423.048183,
+      "mag": 21.7435,
+      "mag_err": 0.0766
+    },
+    {
+      "mjd": 60423.558995,
+      "mag": 21.6435,
+      "mag_err": 0.0882
+    },
+    {
+      "mjd": 60424.069807,
+      "mag": 21.6058,
+      "mag_err": 0.061
+    },
+    {
+      "mjd": 60424.580619,
+      "mag": 21.6718,
+      "mag_err": 0.0846
+    },
+    {
+      "mjd": 60425.091431,
+      "mag": 21.687,
+      "mag_err": 0.0384
+    },
+    {
+      "mjd": 60425.602243,
+      "mag": 21.729,
+      "mag_err": 0.1419
+    },
+    {
+      "mjd": 60426.113055,
+      "mag": 21.8396,
+      "mag_err": 0.1495
+    },
+    {
+      "mjd": 60426.623867,
+      "mag": 21.8283,
+      "mag_err": 0.1676
+    },
+    {
+      "mjd": 60427.134679,
+      "mag": 21.8963,
+      "mag_err": 0.1716
+    },
+    {
+      "mjd": 60427.645491,
+      "mag": 21.9265,
+      "mag_err": 0.1803
+    },
+    {
+      "mjd": 60428.156303,
+      "mag": 21.9374,
+      "mag_err": 0.0972
+    },
+    {
+      "mjd": 60428.667115,
+      "mag": 21.9506,
+      "mag_err": 0.1699
+    },
+    {
+      "mjd": 60429.177927,
+      "mag": 22.0861,
+      "mag_err": 0.1993
+    },
+    {
+      "mjd": 60429.688739,
+      "mag": 22.0491,
+      "mag_err": 0.0467
+    }
+  ],
+  "cutouts": {
+    "reference": "/cutouts/object_000075_ref.webp",
+    "new": "/cutouts/object_000075_new.webp",
+    "difference": "/cutouts/object_000075_diff.webp"
+  }
+}

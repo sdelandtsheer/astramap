@@ -1,8 +1,21 @@
 import { Filter, Layers } from "lucide-react";
 
-const classes = ["Variable", "Asteroid", "Supernova", "AGN", "Artifact", "Unknown"];
+import { CLASS_LABELS, type AlertDatasetSummary, type ClassLabel } from "../types";
 
-export default function LayerControls() {
+const classLabels: Record<ClassLabel, string> = {
+  variable_star: "Variable",
+  asteroid: "Asteroid",
+  supernova_candidate: "Supernova",
+  agn: "AGN",
+  artifact: "Artifact",
+  unknown_anomaly: "Unknown",
+};
+
+interface LayerControlsProps {
+  summary: AlertDatasetSummary | null;
+}
+
+export default function LayerControls({ summary }: LayerControlsProps) {
   return (
     <div className="flex h-full flex-col gap-5 p-4">
       <div className="flex items-center justify-between">
@@ -34,10 +47,11 @@ export default function LayerControls() {
           <span>Classes</span>
         </div>
         <div className="grid grid-cols-2 gap-2">
-          {classes.map((label) => (
-            <label key={label} className="flex items-center gap-2 rounded border border-slate-800 bg-slate-950/60 px-2 py-2 text-xs text-slate-300">
+          {CLASS_LABELS.map((classLabel) => (
+            <label key={classLabel} className="flex items-center gap-2 rounded border border-slate-800 bg-slate-950/60 px-2 py-2 text-xs text-slate-300">
               <input defaultChecked className="accent-cyan-300" type="checkbox" />
-              <span>{label}</span>
+              <span>{classLabels[classLabel]}</span>
+              <span className="ml-auto text-slate-500">{summary?.classCounts[classLabel].toLocaleString() ?? "-"}</span>
             </label>
           ))}
         </div>

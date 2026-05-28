@@ -1,0 +1,119 @@
+{
+  "object_id": "object_000103",
+  "ra": 62.606187,
+  "dec": -12.51253,
+  "first_seen_mjd": 60409.85586,
+  "last_seen_mjd": 60427.249632,
+  "class_probabilities": {
+    "variable_star": 0.0357,
+    "asteroid": 0.0619,
+    "supernova_candidate": 0.6934,
+    "agn": 0.0164,
+    "artifact": 0.091,
+    "unknown_anomaly": 0.1016
+  },
+  "anomaly_score": 0.5762,
+  "priority_score": 0.4399,
+  "short_explanation": "Fast brightening, weak class certainty, possible host-galaxy context.",
+  "flags": [
+    "fast_brightening",
+    "possible_host_galaxy"
+  ],
+  "light_curve": [
+    {
+      "mjd": 60409.85586,
+      "mag": 22.5828,
+      "mag_err": 0.0903
+    },
+    {
+      "mjd": 60410.822181,
+      "mag": 22.3867,
+      "mag_err": 0.0796
+    },
+    {
+      "mjd": 60411.788501,
+      "mag": 22.1804,
+      "mag_err": 0.1241
+    },
+    {
+      "mjd": 60412.754822,
+      "mag": 21.9689,
+      "mag_err": 0.1928
+    },
+    {
+      "mjd": 60413.721143,
+      "mag": 21.775,
+      "mag_err": 0.1552
+    },
+    {
+      "mjd": 60414.687463,
+      "mag": 21.581,
+      "mag_err": 0.0887
+    },
+    {
+      "mjd": 60415.653784,
+      "mag": 21.2992,
+      "mag_err": 0.0583
+    },
+    {
+      "mjd": 60416.620105,
+      "mag": 21.3158,
+      "mag_err": 0.0323
+    },
+    {
+      "mjd": 60417.586425,
+      "mag": 21.5629,
+      "mag_err": 0.1129
+    },
+    {
+      "mjd": 60418.552746,
+      "mag": 21.6384,
+      "mag_err": 0.0335
+    },
+    {
+      "mjd": 60419.519067,
+      "mag": 21.7238,
+      "mag_err": 0.1597
+    },
+    {
+      "mjd": 60420.485387,
+      "mag": 21.7219,
+      "mag_err": 0.0552
+    },
+    {
+      "mjd": 60421.451708,
+      "mag": 21.7842,
+      "mag_err": 0.1797
+    },
+    {
+      "mjd": 60422.418029,
+      "mag": 21.915,
+      "mag_err": 0.1974
+    },
+    {
+      "mjd": 60423.384349,
+      "mag": 21.9322,
+      "mag_err": 0.0505
+    },
+    {
+      "mjd": 60424.35067,
+      "mag": 22.0701,
+      "mag_err": 0.2124
+    },
+    {
+      "mjd": 60425.316991,
+      "mag": 22.153,
+      "mag_err": 0.2025
+    },
+    {
+      "mjd": 60426.283311,
+      "mag": 22.2524,
+      "mag_err": 0.0886
+    },
+    {
+      "mjd": 60427.249632,
+      "mag": 22.3365,
+      "mag_err": 0.2176
+    }
+  ]
+}
