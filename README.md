@@ -26,7 +26,9 @@ Milestone 9, object panel, is complete. Selected-object rendering lives in `fron
 
 Milestone 10, light curve component, is complete. The chart lives in `frontend/src/components/LightCurve.tsx`.
 
-Current focus: Milestone 11, blink card.
+Milestone 11, blink card, is complete. The blink viewer lives in `frontend/src/components/BlinkCard.tsx`.
+
+Current focus: Milestone 12, layer controls.
 
 Planned v0.1 MVP:
 
