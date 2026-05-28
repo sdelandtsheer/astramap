@@ -16,7 +16,6 @@ env/
 data/demo_alerts.json
 data/demo_alerts.json.gz
 data/demo_objects/*.json
-frontend/public/cutouts/*.webp
 
 # Node / frontend
 frontend/node_modules/
