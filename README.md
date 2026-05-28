@@ -38,7 +38,9 @@ Milestone 15, visual polish pass, is complete.
 
 Milestone 16, public caveats and methods, is complete. Methods are documented in `docs/methods.md`.
 
-Current focus: Milestone 17, performance pass.
+Milestone 17, performance pass, is complete. Notes are documented in `docs/performance.md`.
+
+Current focus: Milestone 18, deployment.
 
 Planned v0.1 MVP:
 
