@@ -42,7 +42,9 @@ Milestone 17, performance pass, is complete. Notes are documented in `docs/perfo
 
 Milestone 18, deployment readiness, is complete. Deployment notes live in `docs/deployment.md`.
 
-Current focus: Milestone 19, Wix integration.
+Milestone 19, Wix integration, is complete. Wix integration notes live in `docs/wix_integration.md`.
+
+Current focus: Milestone 20, first real-data bridge.
 
 Planned v0.1 MVP:
 
